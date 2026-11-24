@@ -1,0 +1,16 @@
+VAR
+	min_task : INT := 7000; (*dead zone of the SDC speed set value (oSetPos)*)
+	desired_speed : INT := 0;
+	axis_X : FB_Axis;
+	coil_powered : BOOL := FALSE;
+	coil_pwm_value : {REDUND_UNREPLICABLE} INT := 200;
+	fb_controller : FB_Controller;
+	pwm_period : {REDUND_UNREPLICABLE} UINT := 200;
+	simulation : BOOL := FALSE; (*TRUE: encoder and end switches come from the motor model*)
+	sim_motor : FB_Motor;
+	sim_endswitch : FB_Endswitch;
+	sim_counter : INT := 0;
+	sim_neg_pos : REAL := -30000.0; (*simulated position of switch A, units*)
+	sim_pos_pos : REAL := 30000.0; (*simulated position of switch B, units*)
+	voltage : REAL := 0.0; (*motor voltage, V*)
+END_VAR
